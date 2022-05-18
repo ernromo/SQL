@@ -1,0 +1,25 @@
+/*Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want
+ store to specialize in. You should have a table for all the items in your store, and at least 5 columns 
+ for the kind of data you think you'd need to store. You should sell at least 15 items, and use select 
+ statements to order your items by price and show at least one statistic about the items.*/
+ 
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, quantity INTEGER, color TEXT , sizes TEXT, price INTEGER);
+INSERT INTO store VALUES (1, "BLOUSE", 10, "blue", "medium", 10.99);
+INSERT INTO store VALUES (2, "BLOUSE", 1, "blue", "small", 10.99);
+INSERT INTO store VALUES (3, "BLOUSE", 15, "blue", "large", 10.99);
+INSERT INTO store VALUES (4, "Blazer", 20, "white", "large", 50.99 );
+INSERT INTO store VALUES (5, "Blazer", 2, "white", "XL", 50.99);
+INSERT INTO store VALUES (6, "Blazer", 10, "white", "XS", 50.99);
+INSERT INTO store VALUES (7, "Crop Top", 5, "pink", "small", 25.95);
+INSERT INTO store VALUES (8, "Crop Top", 8, "white", "large", 25.95);
+INSERT INTO store VALUES (9, "Crop Top", 6, "pink", "medium", 25.95);
+INSERT INTO store VALUES (10, "Mom jeans", 18, "light wash", "29", 25.95);
+INSERT INTO store VALUES (11, "Mom jeans", 10, "light wash", "28", 80.99);
+INSERT INTO store VALUES (12, "Mom jeans", 12, "light wash", "30", 80.99);
+INSERT INTO store VALUES (13, "Mom jeans", 1, "dark wash", "29", 80.99);
+INSERT INTO store VALUES (14, "Racerback tank", 6, "white", "XXL", 75.92);
+INSERT INTO store VALUES (15, "Racerback tank", 2, "white", "Small", 75.92);
+SELECT * FROM store ORDER BY price;
+
+SELECT SUM(quantity) FROM store;
+
