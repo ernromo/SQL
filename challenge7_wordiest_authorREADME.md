@@ -46,3 +46,6 @@ SELECT author, SUM(words)AS total_words FROM books GROUP BY author HAVING total_
  /*Select all the authors that write more than an average of 150,000 words per book. 
  Your results table should include the 'author' and average words as an 'avg_words' 
  column.*/
+ 
+SELECT author, AVG(words)AS avg_words FROM books
+GROUP BY author HAVING avg_words > 150000;
