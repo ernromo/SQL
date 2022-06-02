@@ -1,0 +1,65 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE movie_stars (id INTEGER PRIMARY KEY AUTOINCREMENT, full_name TEXT, spouse TEXT);
+
+INSERT INTO movie_stars (full_name, spouse) VALUES ("Tom Hanks", "Rita Wilson");
+INSERT INTO movie_stars (full_name, spouse) VALUES ("Rita Wilson", "Tom Hanks");
+INSERT INTO movie_stars (full_name, spouse) VALUES ("Jessica Biel", "Justin Timberlake");
+INSERT INTO movie_stars (full_name, spouse) VALUES ("Kristen Bell", "Dax Shepherd");
+INSERT INTO movie_stars (full_name, spouse) VALUES ("Dax Shepard", "Kristen Bell");
+INSERT INTO movie_stars (full_name, spouse) VALUES ("Melissa McCarhty", "Ben Falcone");
+INSERT INTO movie_stars (full_name, spouse) VALUES ("Ben Falcone", "Melissa McCarthy");
+INSERT INTO movie_stars (full_name, spouse) VALUES ("Justin Timberlake", "Jessica Biel");
+
+
+CREATE TABLE movies (id INTEGER PRIMARY KEY AUTOINCREMENT, actor_id INTEGER, title TEXT);
+
+
+INSERT INTO movies (actor_id, title) VALUES (1, "Forrest Gump");
+INSERT INTO movies (actor_id, title) VALUES (1, "Joe vs the Volcano");
+INSERT INTO movies (actor_id, title) VALUES (1, "Volunteers");
+INSERT INTO movies (actor_id, title) VALUES (1, "Sleepless in Seattle");
+INSERT INTO movies (actor_id, title) VALUES (2, "Now & Then");
+INSERT INTO movies (actor_id, title) VALUES (2, "Volunteers");
+INSERT INTO movies (actor_id, title) VALUES (2, "Sleepless in Seattle");
+INSERT INTO movies (actor_id, title) VALUES (3, "Valentine's Day");
+INSERT INTO movies (actor_id, title) VALUES (3, "The Illusionist");
+INSERT INTO movies (actor_id, title) VALUES (3, "Summer Catch");
+INSERT INTO movies (actor_id, title) VALUES (4, "Forgetting Sarah Marshall");
+INSERT INTO movies (actor_id, title) VALUES (4, "CHIPS");
+INSERT INTO movies (actor_id, title) VALUES (4, "When in Rome");
+INSERT INTO movies (actor_id, title) VALUES (4, "Hit & Run");
+INSERT INTO movies (actor_id, title) VALUES (4, "Couples Retreat");
+INSERT INTO movies (actor_id, title) VALUES (4, "Frozen");
+INSERT INTO movies (actor_id, title) VALUES (5, "CHIPS");
+INSERT INTO movies (actor_id, title) VALUES (5, "When in Rome");
+INSERT INTO movies (actor_id, title) VALUES (5, "Baby Mama");
+INSERT INTO movies (actor_id, title) VALUES (5, "Hit & Run"); 
+INSERT INTO movies (actor_id, title) VALUES (6, "The Heat");
+INSERT INTO movies (actor_id, title) VALUES (6, "Bridesmaids");
+INSERT INTO movies (actor_id, title) VALUES (6, "Tammy");
+INSERT INTO movies (actor_id, title) VALUES (6, "Identity Thief");
+INSERT INTO movies (actor_id, title) VALUES (7, "Bridesmaids");
+INSERT INTO movies (actor_id, title) VALUES (7, "Identity Thief");
+INSERT INTO movies (actor_id, title) VALUES (7, "Tammy");
+INSERT INTO movies (actor_id, title) VALUES (7, "The Heat");
+INSERT INTO movies (actor_id, title) VALUES (8, "Bad Teacher");
+INSERT INTO movies (actor_id, title) VALUES (8, "The Social Network");
+
+
+/* show only name and movies of "Dax Shepard", using JOIN combined with WHERE */
+
+SELECT movie_stars.full_name, movies.title 
+    FROM movie_stars
+    JOIN movies
+    ON movie_stars.id = movies.actor_id
+    WHERE movie_stars.full_name = "Dax Shepard";
+    
+    
+/* order movies by title with actors that starred in it  */
+
+SELECT movies.title, movie_stars.full_name
+    FROM movies
+    JOIN movie_stars
+    ON movies.actor_id = movie_stars.id
+    ORDER BY movies.title ASC;
