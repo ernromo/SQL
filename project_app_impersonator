@@ -1,0 +1,24 @@
+/* What does the app's SQL look like? create a table to store data. insert a few examples rows in table*/
+
+CREATE TABLE weight_watchers (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, weight INTEGER, date TEXT, breakfast TEXT, lunch TEXT, dinner TEXT, activity TEXT);
+
+INSERT INTO weight_watchers (name, weight, date, breakfast, lunch, dinner, activity) VALUES ("Erin", 130, "2022-06-02", "oatmeal", "turkey sandwich", "spaghetti", "Zumba");
+INSERT INTO weight_watchers (name, weight, date, breakfast, lunch, dinner, activity) VALUES ("Nicole", 180, "2022-06-03", "eggs and turkey bacon", "chicken tacos", "pizza", "walking");
+INSERT INTO weight_watchers (name, weight, date, breakfast, lunch, dinner, activity) VALUES ("Steve", 170, "2022-06-01", "croissant", "chef's salad", "vegetable soup", "weight training");
+INSERT INTO weight_watchers (name, weight, date, breakfast, lunch, dinner, activity) VALUES ("Kevin", 175, "2022-06-02", "banana smoothie", "sushi roll", "chicken and veggies", "pilates");
+INSERT INTO weight_watchers (name, weight, date, breakfast, lunch, dinner, activity) VALUES ("Taylor", 120, "2022-06-01", "waffle and fruit", "vegetable soup", "chicken fajitas", "yoga");
+
+SELECT * FROM weight_watchers;
+
+/* update to emulate what happens when you edit data in app */
+
+UPDATE weight_watchers SET breakfast = "chia seed pudding" WHERE id = 4;
+
+SELECT * FROM weight_watchers;
+
+/* delete to emulate what happens when you delete date in app */
+
+DELETE FROM weight_watchers WHERE id = 2;
+
+SELECT * FROM weight_watchers;
+
